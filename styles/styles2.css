@@ -24,18 +24,13 @@
 
 /* ---------- 内容区(main的一部分) ---------- */
 #contents {
-  margin-top: 70px;
+  margin-top: 40px;
   height: 100%;
   line-height: 2rem;
 }
 
 #contents h1 {
-  margin: 30px 0 5px 0;
-  line-height: 3.25rem;
-  font-size: 3rem;
-  padding-left: 1.5rem; /* 流出左边的空间给#(伪元素) */
-  padding-right: 1.5rem;
-  margin-left: -1.25rem;
+  margin-bottom: 5px;
 }
 
 #contents h2 {

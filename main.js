@@ -1,5 +1,7 @@
 /* ---------- 默认值 ---------- */
 const defaultHash = "#intro";
+const it_Title = "Titolo";
+const zh_CN_Title = "标题";
 
 /* ---------- 静态类：风格管理器 ---------- */
 let currentStyle = undefined;
@@ -58,7 +60,7 @@ function applySavedDatas() {
     "src",
     isChinese ? "icons/china.png" : "icons/italy.png"
   );
-  document.title = isChinese ? "AnimLink文档" : "Documentazione AnimLink";
+  document.title = isChinese ? zh_CN_Title : it_Title;
 }
 
 applySavedDatas();
@@ -112,15 +114,6 @@ function updateActiveLinkByHash() {
       link.classList.remove("active");
     }
   }
-  // for (let i = 0; i < links.length; i++) {
-  //   const link = /** @type {HTMLLinkElement} */ (links[i]);
-  //   if (link.getAttribute("href") === currentHash) {
-  //     link.classList.add("active");
-  //     found = true;
-  //   } else {
-  //     link.classList.remove("active");
-  //   }
-  // }
 
   if (!found) {
     window.location.hash = "#page-not-found";
@@ -145,7 +138,7 @@ function changeLanguage() {
     newLang === "zh-CN" ? "icons/china.png" : "icons/italy.png"
   );
 
-  document.title = isChinese ? "Documentazione AnimLink" : "AnimLink文档";
+  document.title = isChinese ? it_Title : zh_CN_Title;
 }
 
 /* ---------- 监听语言变化 ---------- */

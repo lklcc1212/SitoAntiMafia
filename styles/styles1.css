@@ -23,7 +23,6 @@
   bottom: 0;
   padding: 1rem;
   background: var(--base-bg-color1);
-  border-right: 1px solid var(--border-color);
   overflow-y: auto;
   transition: width 0.25s ease-out, transform 0.25s ease-out;
   z-index: 15;
@@ -34,13 +33,14 @@
 }
 
 #sidebar h2 {
+  font-size: xx-large;
   margin-bottom: 1rem;
   color: var(--sidebar-element-hover-color);
 }
 
 #sidebar li {
   list-style: none;
-  margin: 0.5rem 0;
+  margin: 0.75rem 0;
 }
 
 #sidebar li a {
@@ -60,7 +60,8 @@
 #sidebar a.active {
   font-weight: bold;
   color: var(--sidebar-element-active-color);
-  padding: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  transform: scale(1.1);
 }
 
 #sidebar hr {
@@ -78,67 +79,11 @@
 
 #contents h1 {
   margin-bottom: 27px;
-  font-size: 2rem;
-  line-height: 2.25rem;
-  padding-left: 1.5rem; /* 流出左边的空间给#(伪元素) */
-  padding-right: 1.5rem;
-  margin-left: -1.25rem;
-  position: relative;
   width: fit-content;
-}
-
-/* 伪元素的样式 */
-#contents h1::before {
-  cursor: pointer;
-  content: "#";
-  position: absolute;
-  transform: scale(0);
-  font-size: 1rem;
-  left: 0.5rem;
-  transition: all 0.2s ease;
-}
-#contents h1::after {
-  cursor: pointer;
-  content: "#";
-  position: absolute;
-  transform: scale(0);
-  font-size: 1rem;
-  right: 0.5rem;
-  transition: all 0.2s ease;
-}
-
-/* Hover 时，让它从 0 -> 1.5 放大，并带动画 */
-#contents h1:hover::before {
-  transform: scale(1.5);
-  color: var(--sidebar-element-hover-color);
-}
-#contents h1:hover::after {
-  transform: scale(1.5);
-  color: var(--sidebar-element-hover-color);
-}
-
-/* 点击时，让它从 1.5 -> 1 缩小，并带动画 */
-#contents h1:active::before {
-  transform: scale(1);
-  color: var(--sidebar-element-active-color);
-}
-#contents h1:active::after {
-  transform: scale(1);
-  color: var(--sidebar-element-active-color);
 }
 
 #contents h2 {
   margin-top: 0.5rem;
-}
-
-#contents section:target {
-  position: relative;
-  min-height: 100%;
-  max-width: 100%;
-  visibility: visible;
-  padding: 48px;
-  transform: translateY(0);
-  opacity: 1;
 }
 
 /* section的背景 */
@@ -152,6 +97,35 @@
   opacity: 0;
   transform: translateY(-100px);
   transition: transform 1s ease, opacity 1s ease;
+}
+
+#contents section:target {
+  position: relative;
+  min-height: 100%;
+  max-width: 100%;
+  visibility: visible;
+  padding: 24px 48px 48px 48px;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+section .caption-wrapper {
+  animation: none;
+}
+
+section:target .caption-wrapper {
+  animation: portrait-in-anim 1s normal forwards;
+}
+
+@keyframes portrait-in-anim {
+  from {
+    opacity: 0.5;
+    transform: translateX(-600px) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 /* ---------- 未知页面 ---------- */
