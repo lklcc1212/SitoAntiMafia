@@ -273,6 +273,23 @@ section ul {
 
 /* ---------- 传记风格 ---------- */
 
+.biography-container {
+  display: grid;
+  grid-template-areas:
+    "left-content biography"
+    "left-content biography";
+  grid-template-columns: auto auto;
+  grid: 5px;
+}
+
+.biography-container .biography {
+  grid-area: biography;
+}
+
+.biography-container .left-content {
+  grid-area: left-content;
+}
+
 .biography-container .name {
   margin-bottom: 27px !important; /* 无视顺序，强制应用 */
 }
