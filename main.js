@@ -1,3 +1,6 @@
+/* ---------- 默认值 ---------- */
+const defaultHash = "#intro";
+
 /* ---------- 静态类：风格管理器 ---------- */
 let currentStyle = undefined;
 
@@ -15,7 +18,7 @@ class stylesPathsManager {
     const isStyle1 = style === "style1";
     if (window.location.hash === "" || !isStyle1)
       if (style === "style1") {
-        window.location.hash = localStorage.getItem("savedHash") || "#intro";
+        window.location.hash = localStorage.getItem("savedHash") || defaultHash;
         //滑到顶部
         document
           .getElementById(window.location.hash.replace("#", ""))
@@ -91,8 +94,8 @@ function updateActiveLinkByHash() {
     return;
   }
 
-  //如果 hash === ""，则...。（window.location.hash === "" ? "#intro" : window.location.hash）
-  let currentHash = window.location.hash || "#intro";
+  //如果 hash === ""，则...。（window.location.hash === "" ? defaultHash : window.location.hash）
+  let currentHash = window.location.hash || defaultHash;
   if (window.location.hash === "") {
     window.location.hash = currentHash;
   }
@@ -189,10 +192,6 @@ const changeStylesBtn = document.getElementById("change-style-img");
 changeStylesBtn.addEventListener("click", changeStyle);
 
 function changeStyle() {
-  if (!currentStyle) {
-    currentStyle = localStorage.getItem("savedStyle") || "easyStyles";
-  }
-
   const styles = ["easyStyles", "style1", "style2"];
   const currentIndex = styles.indexOf(currentStyle);
   const nextStyle = styles[(currentIndex + 1) % styles.length];
