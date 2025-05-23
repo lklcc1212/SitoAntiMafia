@@ -9,13 +9,13 @@
 
 /* ---------- 内容(main的一部分) ---------- */
 #contents {
-  padding: 24px;
+  padding: 0 24px 24px 24px;
   line-height: 2rem;
   overflow: auto;
 }
 
 #contents h1 {
-  margin-bottom: 27px;
+  margin-top: 27px;
   font-size: 2rem;
   line-height: 2.25rem;
   width: fit-content;
