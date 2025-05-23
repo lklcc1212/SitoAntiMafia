@@ -276,18 +276,27 @@ section ul {
 .biography-container {
   display: grid;
   grid-template-areas:
-    "left-content biography"
-    "left-content biography";
-  grid-template-columns: auto auto;
-  grid: 5px;
+    "header header"
+    "caption-wrapper biography";
+  grid-template-columns: min-content auto;
+  gap: 1rem;
+}
+
+@media (max-width: 800px) {
+  .biography-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.biography-container h1 {
+  grid-area: header;
 }
 
 .biography-container .biography {
   grid-area: biography;
-}
-
-.biography-container .left-content {
-  grid-area: left-content;
+  text-align: left;
 }
 
 .biography-container .name {
@@ -307,6 +316,7 @@ section ul {
 
 /* ---------- 标题包装器(在.biography-container里) ---------- */
 .caption-wrapper {
+  grid-area: caption-wrapper;
   position: relative;
   width: min-content;
 }
