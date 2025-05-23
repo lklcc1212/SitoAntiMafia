@@ -53,7 +53,7 @@ function applySavedDatas() {
   const isChinese = savedLang === "zh-CN";
   langBtn.setAttribute(
     "src",
-    isChinese ? "images/china.png" : "images/italy.png"
+    isChinese ? "icons/china.png" : "icons/italy.png"
   );
   document.title = isChinese ? "AnimLink文档" : "Documentazione AnimLink";
 }
@@ -139,7 +139,7 @@ function changeLanguage() {
 
   langBtn.setAttribute(
     "src",
-    newLang === "zh-CN" ? "images/china.png" : "images/italy.png"
+    newLang === "zh-CN" ? "icons/china.png" : "icons/italy.png"
   );
 
   document.title = isChinese ? "Documentazione AnimLink" : "AnimLink文档";
