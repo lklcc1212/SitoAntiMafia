@@ -79,6 +79,12 @@
   font-size: 1.4rem;
 }
 
+/* ---------- 通用: 顶部 Header(main的一部分) ---------- */
+#header {
+  top: 0;
+  position: sticky;
+}
+
 /* ---------- 内容区(main的一部分) ---------- */
 #contents {
   padding-right: 24px;
@@ -157,6 +163,7 @@ section:target .caption-wrapper {
 #showSidebarDiv {
   display: none;
   top: var(--header-height);
+  position: sticky;
   height: 2rem;
   background: var(--base-bg-color1);
   padding: 0.5rem;
