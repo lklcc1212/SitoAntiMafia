@@ -2,7 +2,7 @@
 /* ---------- 布局 ---------- */
 #layout {
   display: flex; /* 它将容器变成灵活的容器。默认：横向 */
-  height: 100lvh;
+  height: 100dvh;
 }
 
 #main {
@@ -207,5 +207,3 @@ section:target .caption-wrapper {
     cursor: pointer;
   }
 }
-
-/* 风格灵感来自： https://schema-render.js.org/core-react/001-intro */
