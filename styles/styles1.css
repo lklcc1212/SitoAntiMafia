@@ -66,8 +66,9 @@
 }
 
 #sidebar hr {
+  border: none;
   border-color: var(--border-color);
-  border-bottom: 1px solid;
+  border-top: 1px solid;
 }
 
 /* 分割字体风格s */
