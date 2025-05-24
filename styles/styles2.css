@@ -1,6 +1,5 @@
 /* --------------------------------------------- 风格2 --------------------------------------------- */
 /* ---------- 布局 ---------- */
-
 #main {
   --main-padding: 20px;
   margin: 10px 60px;
@@ -77,9 +76,4 @@ pre:has(.styleInfo) {
 /* ---------- 侧边栏显示按钮风格(不显示) ---------- */
 #showSidebarDiv {
   display: none;
-}
-
-/* ---------- 授权说明 ---------- */
-footer.credits {
-  border-bottom: 1.5px solid var(--border-color);
 }

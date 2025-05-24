@@ -2,9 +2,54 @@
 const defaultHash = "#intro";
 const it_Title = "Titolo";
 const zh_CN_Title = "标题";
+const footer = `<footer class="credits zh-CN">
+            本网页信息来源于维基百科词条
+            <a href="https://it.wikipedia.org/wiki/Giovanni_Falcone"
+              >《Giovanni Falcone》</a
+            >、<a href="https://it.wikipedia.org/wiki/Paolo_Borsellino"
+              >《Paolo Borsellino》</a
+            >、<a href="https://it.wikipedia.org/wiki/Peppino_Impastato"
+              >《Peppino Impastato》</a
+            >、<a href="https://it.wikipedia.org/wiki/Pino_Puglisi"
+              >《Pino Pugliisi》</a
+            >内容已编辑与翻译，依据<a
+              href="https://creativecommons.org/licenses/by-sa/4.0/"
+              target="_blank"
+            >
+              CC BY-SA 4.0</a
+            >
+            协议使用。
+          </footer>
+          <footer class="credits it">
+            Le informazioni di questa pagina sono tratte dalle voci di Wikipedia
+            <a
+              href="https://it.wikipedia.org/wiki/Giovanni_Falcone"
+              target="_blank"
+              >“Giovanni Falcone”</a
+            >,
+            <a
+              href="https://it.wikipedia.org/wiki/Paolo_Borsellino"
+              target="_blank"
+              >“Paolo Borsellino”</a
+            >,
+            <a
+              href="https://it.wikipedia.org/wiki/Peppino_Impastato"
+              target="_blank"
+              >“Peppino Impastato”</a
+            >,
+            <a href="https://it.wikipedia.org/wiki/Pino_Puglisi" target="_blank"
+              >“Pino Puglisi”</a
+            >. I contenuti sono modificati, rilasciati secondo la licenza
+            <a
+              href="https://creativecommons.org/licenses/by-sa/4.0/"
+              target="_blank"
+              >CC BY-SA 4.0</a
+            >.
+          </footer>`;
 
 /* ---------- 静态类：风格管理器 ---------- */
 let currentStyle = undefined;
+let addedFooter = false; // 只用于style2和easyStyles
 
 class stylesPathsManager {
   static #stylesPathMap = {
@@ -18,6 +63,7 @@ class stylesPathsManager {
    */
   static getStylePath(style) {
     const isStyle1 = style === "style1";
+
     if (window.location.hash === "" || !isStyle1)
       if (style === "style1") {
         window.location.hash = localStorage.getItem("savedHash") || defaultHash;
@@ -25,9 +71,25 @@ class stylesPathsManager {
         document
           .getElementById(window.location.hash.replace("#", ""))
           ?.parentElement.scrollTo(0, 0);
+
+        addedFooter = false;
       } else {
+        //为style2和easyStyles增加footer。如果有则不增加。
+        if (!addedFooter) {
+          const allFooter = document.querySelectorAll("footer");
+
+          for (let footer of allFooter) {
+            footer.remove();
+          }
+
+          const sections = document.querySelectorAll("section");
+          sections[sections.length - 2].insertAdjacentHTML("beforeend", footer);
+        }
+
         window.location.hash = "";
+        addedFooter = true;
       }
+
     return this.#stylesPathMap[style];
   }
 }
@@ -118,6 +180,14 @@ function updateActiveLinkByHash() {
   if (!found) {
     window.location.hash = "#page-not-found";
   }
+
+  const currentElement = document.getElementById(
+    window.location.hash.replace("#", "")
+  );
+  if (!currentElement.querySelector("footer"))
+    document
+      .getElementById(window.location.hash.replace("#", ""))
+      .insertAdjacentHTML("beforeend", footer);
 }
 
 updateActiveLinkByHash();
