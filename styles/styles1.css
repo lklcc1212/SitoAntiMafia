@@ -205,6 +205,8 @@ section:target .caption-wrapper {
 
   #showSidebarDiv {
     display: flex;
+    top: var(--header-height);
+    position: sticky;
   }
 
   #showSidebarDiv span:hover {
