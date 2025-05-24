@@ -34,6 +34,7 @@
 
 #sidebar h2 {
   font-size: xx-large;
+  font-family: "Merienda", Courier, monospace;
   margin-bottom: 1rem;
   color: var(--sidebar-element-hover-color);
 }
@@ -160,6 +161,7 @@ section:target .caption-wrapper {
   padding: 0.5rem;
   align-items: center;
   border-bottom: 0.5px solid var(--border-color);
+  border-top: 0.5px solid var(--border-color);
 }
 
 #translucentScreen {
