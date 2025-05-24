@@ -150,15 +150,15 @@ section:target .caption-wrapper {
 }
 
 #page-not-found p {
-  font-size: 6vw;
-  line-height: 6.5vw;
+  font-size: max(6vw, 3rem);
+  line-height: max(6.25vw, 3.25rem);
   font-family: "Merienda", cursive;
   text-align: center;
 }
 
 #page-not-found a {
-  font-size: 2vw;
-  line-height: 2.25vw;
+  font-size: max(2vw, 1rem);
+  line-height: max(2.25vw, 1.25rem);
 }
 
 /* ---------- 侧边栏显示按钮风格(初始状态：不显示) ---------- */

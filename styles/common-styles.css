@@ -425,6 +425,7 @@ h3,
 code:not(:is(pre code, table code)),
 p {
   word-break: break-word;
+  white-space: wrap;
 }
 
 /* ---------- 通用：授权说明 ---------- */
