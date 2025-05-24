@@ -40,7 +40,7 @@
 
 #sidebar li {
   list-style: none;
-  margin: 0.75rem 0;
+  margin: 0.5rem 0;
 }
 
 #sidebar li a {
@@ -60,12 +60,21 @@
 #sidebar a.active {
   font-weight: bold;
   color: var(--sidebar-element-active-color);
-  padding: 0.25rem 0.75rem;
+  padding: 0.25rem 0.5rem;
   transform: scale(1.1);
 }
 
 #sidebar hr {
   border-color: var(--border-color);
+}
+
+/* 分割字体风格s */
+#sidebar .separator-text {
+  text-align: center;
+  font-weight: bolder;
+  border-top: 1px solid;
+  padding-top: 0.5rem;
+  font-size: 1.4rem;
 }
 
 /* ---------- 内容区(main的一部分) ---------- */

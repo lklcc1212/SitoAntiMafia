@@ -24,7 +24,7 @@ class stylesPathsManager {
         //滑到顶部
         document
           .getElementById(window.location.hash.replace("#", ""))
-          .parentElement.scrollTo(0, 0);
+          ?.parentElement.scrollTo(0, 0);
       } else {
         window.location.hash = "";
       }
@@ -185,6 +185,11 @@ const changeStylesBtn = document.getElementById("change-style-img");
 changeStylesBtn.addEventListener("click", changeStyle);
 
 function changeStyle() {
+  if (!currentStyle) {
+    currentStyle = localStorage.getItem("savedStyle") || "easyStyles";
+  }
+  console.log(currentStyle);
+
   const styles = ["easyStyles", "style1", "style2"];
   const currentIndex = styles.indexOf(currentStyle);
   const nextStyle = styles[(currentIndex + 1) % styles.length];
