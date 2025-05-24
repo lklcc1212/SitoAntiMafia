@@ -422,3 +422,10 @@ code:not(:is(pre code, table code)),
 p {
   word-break: break-word;
 }
+
+/* ---------- 通用：授权说明 ---------- */
+footer.credits {
+  font-size: 0.85em;
+  color: var(--base-color);
+  text-align: center;
+}

@@ -41,3 +41,8 @@ pre:has(.styleInfo) {
 #showSidebarDiv {
   display: none;
 }
+
+/* ---------- 授权说明 ---------- */
+footer.credits {
+  border-bottom: 1.5px solid var(--border-color);
+}

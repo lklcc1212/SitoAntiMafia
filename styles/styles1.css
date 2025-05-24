@@ -104,7 +104,7 @@
   min-height: 100%;
   max-width: 100%;
   visibility: visible;
-  padding: 24px 48px 48px 48px;
+  padding: 24px 48px 10px 48px;
   transform: translateY(0);
   opacity: 1;
 }
@@ -167,7 +167,7 @@ section:target .caption-wrapper {
 }
 
 /* ---------- 响应式设计 ---------- */
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
   #sidebar {
     width: 300px;
     transform: translateX(-300px);
