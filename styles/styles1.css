@@ -78,12 +78,6 @@
   font-size: 1.4rem;
 }
 
-/* ---------- 通用: 顶部 Header(main的一部分) ---------- */
-#header {
-  position: sticky;
-  top: 0;
-}
-
 /* ---------- 内容区(main的一部分) ---------- */
 #contents {
   padding-right: 24px;
@@ -205,8 +199,6 @@ section:target .caption-wrapper {
 
   #showSidebarDiv {
     display: flex;
-    top: var(--header-height);
-    position: sticky;
   }
 
   #showSidebarDiv span:hover {
