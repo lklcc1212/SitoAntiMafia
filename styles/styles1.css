@@ -67,6 +67,7 @@
 
 #sidebar hr {
   border-color: var(--border-color);
+  border-bottom: 1px solid;
 }
 
 /* 分割字体风格s */
