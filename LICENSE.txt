@@ -2,7 +2,7 @@ LICENSE
 
 © 2025 lklcc1212
 
-This project contains three different types of content, each subject to different licenses:
+This webpage includes different types of content, each with its own license:
 
 ------------------
 
