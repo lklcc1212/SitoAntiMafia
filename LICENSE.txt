@@ -26,7 +26,7 @@ This webpage includes different types of content, each with its own license:
 ------------------
 
 3. Webpage Source Code (HTML/CSS/JavaScript)
-   Except for the contents mentioned above, all other source code (including HTML, CSS, and JavaScript files) is released under the MIT License, full text as follows:
+   All source code is released under the MIT License, full text as follows:
 
 MIT License
 
