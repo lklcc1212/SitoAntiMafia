@@ -1,4 +1,4 @@
-PROJECT LICENSE
+LICENSE
 
 This project contains three different types of content, each subject to different licenses:
 
