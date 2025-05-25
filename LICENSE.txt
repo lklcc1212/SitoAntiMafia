@@ -18,8 +18,8 @@ This project contains three different types of content, each subject to differen
 ------------------
 
 2. Images
-   The images used on this website are from the public domain.
-   Users should verify the compliance of the image source on their own, and the author does not bear any copyright liability arising therefrom.
+   The images used on this website are from the Wikimedia Commons and are in the public domain.
+   Users are advised to consult the original Wikipedia page for detailed licensing information.
 
 ------------------
 
