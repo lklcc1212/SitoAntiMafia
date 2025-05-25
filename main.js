@@ -5,21 +5,23 @@
 const defaultHash = "#intro";
 const it_Title = "Titolo";
 const zh_CN_Title = "标题";
-const footer = `<footer class="credits zh-CN">
+const footer = `
+          <footer class="credits zh-CN">
+            <p>© 2025 lklcc1212</p>
             本网页信息来源于维基百科词条
-            <a 
+            <a
               href="https://it.wikipedia.org/wiki/Giovanni_Falcone"
               target="_blank"
               >《Giovanni Falcone》</a
-            >、<a 
+            >、<a
               href="https://it.wikipedia.org/wiki/Paolo_Borsellino"
               target="_blank"
               >《Paolo Borsellino》</a
-            >、<a 
+            >、<a
               href="https://it.wikipedia.org/wiki/Peppino_Impastato"
               target="_blank"
               >《Peppino Impastato》</a
-            >、<a 
+            >、<a
               href="https://it.wikipedia.org/wiki/Pino_Puglisi"
               target="_blank"
               >《Pino Pugliisi》</a
@@ -30,9 +32,15 @@ const footer = `<footer class="credits zh-CN">
               CC BY-SA 4.0</a
             >
             协议使用。
+            <p>
+              更多版权信息：
+              <a href="LICENSE.txt" target="_blank">点击查看</a>
+            </p>
           </footer>
           <footer class="credits it">
-            Le informazioni di questa pagina web sono tratte dalle voci di Wikipedia
+            <p>© 2025 lklcc1212</p>
+            Le informazioni di questa pagina web sono tratte dalle voci di
+            Wikipedia
             <a
               href="https://it.wikipedia.org/wiki/Giovanni_Falcone"
               target="_blank"
@@ -56,6 +64,10 @@ const footer = `<footer class="credits zh-CN">
               target="_blank"
               >CC BY-SA 4.0</a
             >.
+            <p>
+              Ulteriori informazioni sul copyright:
+              <a href="LICENSE.txt" target="_blank">Clicca per visualizzare</a>
+            </p>
           </footer>`;
 
 /* ---------- 静态类：风格管理器 ---------- */
