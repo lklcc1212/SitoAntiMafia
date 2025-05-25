@@ -1,5 +1,7 @@
 LICENSE
 
+© 2025 lklcc1212
+
 This project contains three different types of content, each subject to different licenses:
 
 ------------------
@@ -11,7 +13,7 @@ This project contains three different types of content, each subject to differen
    These contents are licensed under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0).
 
    Original content:
-   All rights are reserved for the original content of this page. Copying, dissemination or modification of original content is prohibited without permission.
+   All rights are reserved for the original content on this webpage. Copying, dissemination or modification of original content is prohibited without permission.
 
    The original content corresponds to the introduction section (titled "Introduzione"/"简介").
 
