@@ -9,7 +9,8 @@ This webpage includes different types of content, each with its own license:
 1. Content (Textual Parts)
 
    Adapted content:
-   Some textual content in this project is based on edits and translations from the Italian Wikipedia entries, with specific sources indicated at the bottom of the webpage.
+   Some textual content are based on edits and translations from Italian Wikipedia pages. 
+   Sources are listed at the bottom of the webpage. 
    These contents are licensed under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0).
 
    Original content:
