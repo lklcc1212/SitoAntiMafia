@@ -283,3 +283,8 @@ function changeStyle() {
   currentStyle = nextStyle;
   localStorage.setItem("savedStyle", nextStyle);
 }
+
+/* ---------- 取消左键点击 ---------- */
+document.addEventListener("contextmenu", function (e) {
+  e.preventDefault();
+});
