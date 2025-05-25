@@ -1,3 +1,6 @@
+// Copyright (c) 2025 lklcc1212
+// Licensed under the MIT License.
+
 /* ---------- 默认值 ---------- */
 const defaultHash = "#intro";
 const it_Title = "Titolo";
