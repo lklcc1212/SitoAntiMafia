@@ -5,8 +5,7 @@
 const defaultHash = "#intro";
 const it_Title = "Titolo";
 const zh_CN_Title = "标题";
-const footer = `
-          <footer class="credits zh-CN">
+const footer = `<footer class="credits zh-CN">
             <p>© 2025 lklcc1212</p>
             本网页信息来源于维基百科词条
             <a
