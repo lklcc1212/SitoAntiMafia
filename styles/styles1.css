@@ -67,15 +67,14 @@
 
 #sidebar hr {
   border: none;
-  border-color: var(--border-color);
-  border-top: 1px solid;
+  border-top: 1.5px solid var(--border-color);
 }
 
 /* 分割字体风格s */
 #sidebar .separator-text {
   text-align: center;
   font-weight: bolder;
-  border-top: 1px solid;
+  border-top: 1.5px solid var(--border-color);
   padding-top: 0.5rem;
   font-size: 1.4rem;
 }

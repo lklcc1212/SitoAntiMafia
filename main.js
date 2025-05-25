@@ -172,6 +172,15 @@ function updateActiveLinkByHash() {
     if (link.getAttribute("href") === currentHash) {
       link.classList.add("active");
       found = true;
+
+      //增加Footer
+      const currentElement = document.getElementById(
+        window.location.hash.replace("#", "")
+      );
+      if (!currentElement.querySelector("footer"))
+        document
+          .getElementById(window.location.hash.replace("#", ""))
+          .insertAdjacentHTML("beforeend", footer);
     } else {
       link.classList.remove("active");
     }
@@ -180,14 +189,6 @@ function updateActiveLinkByHash() {
   if (!found) {
     window.location.hash = "#page-not-found";
   }
-
-  const currentElement = document.getElementById(
-    window.location.hash.replace("#", "")
-  );
-  if (!currentElement.querySelector("footer"))
-    document
-      .getElementById(window.location.hash.replace("#", ""))
-      .insertAdjacentHTML("beforeend", footer);
 }
 
 updateActiveLinkByHash();
