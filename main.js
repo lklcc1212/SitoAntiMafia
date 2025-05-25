@@ -21,7 +21,7 @@ const footer = `<footer class="credits zh-CN">
             协议使用。
           </footer>
           <footer class="credits it">
-            Le informazioni di questa pagina sono tratte dalle voci di Wikipedia
+            Le informazioni di questa pagina web sono tratte dalle voci di Wikipedia
             <a
               href="https://it.wikipedia.org/wiki/Giovanni_Falcone"
               target="_blank"
