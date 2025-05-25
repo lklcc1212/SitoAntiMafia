@@ -35,7 +35,7 @@ const footer = `<footer class="credits zh-CN">
             <br />
             本网页原创内容保留所有权利。未经许可，禁止复制、传播或修改原创内容。
             <br />
-            更多版权信息：
+            更多许可信息：
             <a href="LICENSE.txt" target="_blank">点击查看</a>
           </footer>
           <footer class="credits it">
@@ -69,7 +69,7 @@ const footer = `<footer class="credits zh-CN">
             <br />
             Tutti i contenuti originali sono riservati. È vietata la copia, la distribuzione o la modifica dei contenuti originali senza autorizzazione.
             <br />
-            Ulteriori informazioni sul copyright:
+            Ulteriori informazioni sulle licenze:
             <a href="LICENSE.txt" target="_blank">Clicca per visualizzare</a>
           </footer>`;
 
