@@ -25,7 +25,7 @@ This project contains three different types of content, each subject to differen
 
 ------------------
 
-3. Website Source Code (HTML/CSS/JavaScript)
+3. Webpage Source Code (HTML/CSS/JavaScript)
    Except for the contents mentioned above, all other source code (including HTML, CSS, and JavaScript files) is released under the MIT License, full text as follows:
 
 MIT License
