@@ -284,7 +284,10 @@ function changeStyle() {
   localStorage.setItem("savedStyle", nextStyle);
 }
 
-/* ---------- 取消左键点击 ---------- */
+/* ---------- 禁止右键图片 ---------- */
 document.addEventListener("contextmenu", function (e) {
-  e.preventDefault();
+  const target = /** @type {HTMLElement} */ (e.target);
+  if (target instanceof HTMLImageElement) {
+    e.preventDefault(); // 禁止图片元素的右键菜单
+  }
 });
