@@ -33,7 +33,7 @@ const footer = `<footer class="credits zh-CN">
             >
             许可发布。
             <br />
-            原创内容保留所有权利，未经许可请勿复制或修改。
+            原创内容保留所有权利，未经许可请勿复制，传播或修改。
             <br />
             更多许可信息：
             <a href="LICENSE.txt" target="_blank">点击这里。</a>
