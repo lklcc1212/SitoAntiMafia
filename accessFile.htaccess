@@ -1,0 +1,8 @@
+<FilesMatch "\.(jpg|jpeg|png|gif|webp|avif)$">
+    Order Deny,Allow
+    Deny from all
+    Allow from env=HTTP_REFERER
+</FilesMatch>
+
+SetEnvIf Referer "^https://lklcc1212.github.io/SitoScuola/" HTTP_REFERER
+SetEnvIf Referer "^https://lklcc1212.github.io/SitoScuola/" HTTP_REFERER
