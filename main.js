@@ -4,13 +4,21 @@ const it_Title = "Titolo";
 const zh_CN_Title = "标题";
 const footer = `<footer class="credits zh-CN">
             本网页信息来源于维基百科词条
-            <a href="https://it.wikipedia.org/wiki/Giovanni_Falcone"
+            <a 
+              href="https://it.wikipedia.org/wiki/Giovanni_Falcone"
+              target="_blank"
               >《Giovanni Falcone》</a
-            >、<a href="https://it.wikipedia.org/wiki/Paolo_Borsellino"
+            >、<a 
+              href="https://it.wikipedia.org/wiki/Paolo_Borsellino"
+              target="_blank"
               >《Paolo Borsellino》</a
-            >、<a href="https://it.wikipedia.org/wiki/Peppino_Impastato"
+            >、<a 
+              href="https://it.wikipedia.org/wiki/Peppino_Impastato"
+              target="_blank"
               >《Peppino Impastato》</a
-            >、<a href="https://it.wikipedia.org/wiki/Pino_Puglisi"
+            >、<a 
+              href="https://it.wikipedia.org/wiki/Pino_Puglisi"
+              target="_blank"
               >《Pino Pugliisi》</a
             >内容已编辑与翻译，依据<a
               href="https://creativecommons.org/licenses/by-sa/4.0/"
