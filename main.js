@@ -25,18 +25,18 @@ const footer = `<footer class="credits zh-CN">
               href="https://it.wikipedia.org/wiki/Pino_Puglisi"
               target="_blank"
               >《Pino Puglisi》</a
-            >内容已编辑与翻译，依据<a
+            >内容已编辑与翻译，根据<a
               href="https://creativecommons.org/licenses/by-sa/4.0/"
               target="_blank"
             >
               CC BY-SA 4.0</a
             >
-            协议使用。
+            许可发布。
             <br />
-            本网页原创内容保留所有权利。未经许可，禁止复制、传播或修改原创内容。
+            原创内容保留所有权利，未经许可请勿复制或修改。
             <br />
             更多许可信息：
-            <a href="LICENSE.txt" target="_blank">点击查看</a>
+            <a href="LICENSE.txt" target="_blank">点击这里。</a>
           </footer>
           <footer class="credits it">
             © 2025 lklcc1212
@@ -60,17 +60,17 @@ const footer = `<footer class="credits zh-CN">
             >,
             <a href="https://it.wikipedia.org/wiki/Pino_Puglisi" target="_blank"
               >“Pino Puglisi”</a
-            >. I contenuti sono modificati, rilasciati secondo la licenza
+            >. I contenuti sono modificati, rilasciati sotto la licenza
             <a
               href="https://creativecommons.org/licenses/by-sa/4.0/"
               target="_blank"
               >CC BY-SA 4.0</a
             >.
             <br />
-            Tutti i contenuti originali sono riservati. È vietata la copia, la distribuzione o la modifica dei contenuti originali senza autorizzazione.
+            Tutti i contenuti originali sono riservati. È vietata la copia, la distribuzione o la modifica senza autorizzazione.
             <br />
             Ulteriori informazioni sulle licenze:
-            <a href="LICENSE.txt" target="_blank">Clicca per visualizzare</a>
+            <a href="LICENSE.txt" target="_blank">Clicca qui.</a>
           </footer>`;
 
 /* ---------- 静态类：风格管理器 ---------- */
