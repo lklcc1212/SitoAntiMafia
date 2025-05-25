@@ -14,7 +14,7 @@ This webpage includes different types of content, each with its own license:
    These contents are licensed under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0).
 
    Original content:
-   All rights are reserved for the original content on this webpage. Copying, dissemination or modification of original content is prohibited without permission.
+   All original content on this webpage is licensed under the Creative Commons Attribution-ShareAlike 4.0 International(CC BY-SA 4.0).
    The original content corresponds to the introduction section (titled "Introduzione"/"简介").
 
 ------------------
