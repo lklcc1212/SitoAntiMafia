@@ -291,6 +291,10 @@ section ul {
     flex-direction: column;
     align-items: center;
   }
+
+  .biography-container h1 {
+    text-align: center;
+  }
 }
 
 .biography-container h1 {
