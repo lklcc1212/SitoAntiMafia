@@ -6,8 +6,9 @@ const defaultHash = "#intro";
 const it_Title = "Titolo";
 const zh_CN_Title = "标题";
 const footer = `<footer class="credits zh-CN">
-            <p>© 2025 lklcc1212</p>
-            本网页信息来源于维基百科词条
+            © 2025 lklcc1212
+            <br />
+            本网页部分信息来源于维基百科词条
             <a
               href="https://it.wikipedia.org/wiki/Giovanni_Falcone"
               target="_blank"
@@ -23,7 +24,7 @@ const footer = `<footer class="credits zh-CN">
             >、<a
               href="https://it.wikipedia.org/wiki/Pino_Puglisi"
               target="_blank"
-              >《Pino Pugliisi》</a
+              >《Pino Puglisi》</a
             >内容已编辑与翻译，依据<a
               href="https://creativecommons.org/licenses/by-sa/4.0/"
               target="_blank"
@@ -31,14 +32,16 @@ const footer = `<footer class="credits zh-CN">
               CC BY-SA 4.0</a
             >
             协议使用。
-            <p>
-              更多版权信息：
-              <a href="LICENSE.txt" target="_blank">点击查看</a>
-            </p>
+            <br />
+            本网页原创内容保留所有权利。未经许可，禁止复制、传播或修改原创内容。
+            <br />
+            更多版权信息：
+            <a href="LICENSE.txt" target="_blank">点击查看</a>
           </footer>
           <footer class="credits it">
-            <p>© 2025 lklcc1212</p>
-            Le informazioni di questa pagina web sono tratte dalle voci di
+            © 2025 lklcc1212
+            <br />
+            Alcuni informazioni di questa pagina web sono tratte dalle voci di
             Wikipedia
             <a
               href="https://it.wikipedia.org/wiki/Giovanni_Falcone"
@@ -63,10 +66,11 @@ const footer = `<footer class="credits zh-CN">
               target="_blank"
               >CC BY-SA 4.0</a
             >.
-            <p>
-              Ulteriori informazioni sul copyright:
-              <a href="LICENSE.txt" target="_blank">Clicca per visualizzare</a>
-            </p>
+            <br />
+            Tutti i contenuti originali sono riservati. È vietata la copia, la distribuzione o la modifica dei contenuti originali senza autorizzazione.
+            <br />
+            Ulteriori informazioni sul copyright:
+            <a href="LICENSE.txt" target="_blank">Clicca per visualizzare</a>
           </footer>`;
 
 /* ---------- 静态类：风格管理器 ---------- */

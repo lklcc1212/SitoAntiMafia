@@ -438,6 +438,7 @@ p {
 /* ---------- 通用：授权说明 ---------- */
 footer.credits {
   font-size: 0.85em;
+  line-height: 1.25rem;
   color: var(--base-color);
   text-align: center;
 }

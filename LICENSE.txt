@@ -2,19 +2,26 @@ PROJECT LICENSE
 
 This project contains three different types of content, each subject to different licenses:
 
----
+------------------
 
 1. Content (Textual Parts)
+
+   Adapted content:
    Some textual content in this project is based on edits and translations from the Italian Wikipedia entries, with specific sources indicated at the bottom of the webpage.
    These contents are licensed under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0).
 
----
+   Original content:
+   All rights are reserved for the original content of this page. Copying, dissemination or modification of original content is prohibited without permission.
+
+   The original content corresponds to the introduction section (titled "Introduzione"/"简介").
+
+------------------
 
 2. Images
    The images used on this website are from the public domain.
    Users should verify the compliance of the image source on their own, and the author does not bear any copyright liability arising therefrom.
 
----
+------------------
 
 3. Website Source Code (HTML/CSS/JavaScript)
    Except for the contents mentioned above, all other source code (including HTML, CSS, and JavaScript files) is released under the MIT License, full text as follows:
