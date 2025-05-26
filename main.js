@@ -3,8 +3,8 @@
 
 /* ---------- 默认值 ---------- */
 const defaultHash = "#intro";
-const it_Title = "Titolo";
-const zh_CN_Title = "标题";
+const it_Title = "Eroica legalità";
+const zh_CN_Title = "Eroica legalità";
 const footer = `<footer class="credits zh-CN">
             © 2025 lklcc1212
             <br />
