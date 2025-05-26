@@ -43,7 +43,7 @@ const footer = `<footer class="credits zh-CN">
           <footer class="credits it">
             © 2025 lklcc1212
             <br />
-            Questa pagina è solo a scopo didattico.
+            Questa pagina web è solo a scopo didattico.
             <br />
             Alcuni informazioni di questa pagina web sono tratte dalle voci di
             Wikipedia
