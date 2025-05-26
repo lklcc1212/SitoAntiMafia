@@ -33,7 +33,7 @@ const footer = `<footer class="credits zh-CN">
             >
             许可发布。
             <br />
-            本网页原创内容采用<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>许可发布。
+            本网页中的原创文本内容采用<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>许可发布。
             <br />
             更多许可信息：
             <a href="LICENSE.txt" target="_blank">点击这里。</a>
@@ -67,7 +67,7 @@ const footer = `<footer class="credits zh-CN">
               >CC BY-SA 4.0</a
             >.
             <br />
-            Tutti i contenuti originali di questa pagina web sono rilasciati sotto la licenza <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+            Tutti i contenuti testuali originali di questa pagina web sono rilasciati sotto la licenza <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
             <br />
             Ulteriori informazioni sulle licenze:
             <a href="LICENSE.txt" target="_blank">Clicca qui.</a>
