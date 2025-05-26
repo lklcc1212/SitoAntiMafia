@@ -24,7 +24,7 @@ const footer = `<footer class="credits zh-CN">
             >、<a
               href="https://it.wikipedia.org/wiki/Pino_Puglisi"
               target="_blank"
-              >《Pino Puglisi》</a
+              >《Don Pino Puglisi》</a
             >内容已编辑与翻译，根据<a
               href="https://creativecommons.org/licenses/by-sa/4.0/"
               target="_blank"
@@ -59,7 +59,7 @@ const footer = `<footer class="credits zh-CN">
               >“Peppino Impastato”</a
             >,
             <a href="https://it.wikipedia.org/wiki/Pino_Puglisi" target="_blank"
-              >“Pino Puglisi”</a
+              >“Don Pino Puglisi”</a
             >. I contenuti sono modificati, rilasciati sotto la licenza
             <a
               href="https://creativecommons.org/licenses/by-sa/4.0/"
