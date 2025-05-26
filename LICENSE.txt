@@ -11,6 +11,11 @@ This webpage includes different types of content, each with its own license:
    Adapted content:
    Some textual content are based on edits and translations from Italian Wikipedia pages. 
    Sources are listed at the bottom of the webpage. 
+   Sources:
+   - https://it.wikipedia.org/wiki/Giovanni_Falcone
+   - https://it.wikipedia.org/wiki/Paolo_Borsellino
+   - https://it.wikipedia.org/wiki/Peppino_Impastato
+   - https://it.wikipedia.org/wiki/Pino_Puglisi
    These contents are licensed under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0).
 
    Original content:
