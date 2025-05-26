@@ -140,7 +140,7 @@ a {
   gap: 0.5rem; /* logo和标题之间的间距 */
   font-weight: bold;
   font-family: "Merienda";
-  font-size: 2rem;
+  font-size: min(2rem, max(5dvw, 18px));
 }
 
 #header .logo img {
