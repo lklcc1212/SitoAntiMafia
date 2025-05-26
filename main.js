@@ -8,6 +8,8 @@ const zh_CN_Title = "Eroica legalità";
 const footer = `<footer class="credits zh-CN">
             © 2025 lklcc1212
             <br />
+            本网页仅用于教育目的。 
+            <br />
             本网页部分信息来源于维基百科词条
             <a
               href="https://it.wikipedia.org/wiki/Giovanni_Falcone"
@@ -40,6 +42,8 @@ const footer = `<footer class="credits zh-CN">
           </footer>
           <footer class="credits it">
             © 2025 lklcc1212
+            <br />
+            Questa pagina è solo a scopo didattico.
             <br />
             Alcuni informazioni di questa pagina web sono tratte dalle voci di
             Wikipedia
