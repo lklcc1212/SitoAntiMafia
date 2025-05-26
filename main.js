@@ -140,7 +140,7 @@ function applySavedDatas() {
   }
 
   // 语言应用
-  const savedLang = localStorage.getItem("lang") || "zh-CN";
+  const savedLang = localStorage.getItem("lang") || "it";
   const langBtn = document.getElementById("lang-toggle");
   document.documentElement.lang = savedLang;
   const isChinese = savedLang === "zh-CN";
