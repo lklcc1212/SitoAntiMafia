@@ -123,11 +123,11 @@
   opacity: 1;
 }
 
-section .caption-wrapper {
+.biography-container .caption-wrapper {
   animation: none;
 }
 
-section:target .caption-wrapper {
+section:target .biography-container .caption-wrapper {
   animation: portrait-in-anim 1s normal forwards;
 }
 

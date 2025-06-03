@@ -106,11 +106,9 @@ class stylesPathsManager {
       } else {
         //为style2和easyStyles增加footer。如果有则不增加。
         if (!addedFooter) {
-          const allFooter = document.querySelectorAll("footer");
-
-          for (let footer of allFooter) {
-            footer.remove();
-          }
+          [...document.getElementsByClassName("credits")].forEach((e) =>
+            e.remove()
+          );
 
           const sections = document.querySelectorAll("section");
           sections[sections.length - 2].insertAdjacentHTML("beforeend", footer);
@@ -207,7 +205,7 @@ function updateActiveLinkByHash() {
       const currentElement = document.getElementById(
         window.location.hash.replace("#", "")
       );
-      if (!currentElement.querySelector("footer"))
+      if (currentElement.getElementsByClassName("credits").length === 0)
         document
           .getElementById(window.location.hash.replace("#", ""))
           .insertAdjacentHTML("beforeend", footer);
@@ -225,6 +223,7 @@ updateActiveLinkByHash();
 window.addEventListener("hashchange", updateActiveLinkByHash);
 
 /* ---------- 语言切换 ---------- */
+
 const langBtn = document.getElementById("lang-toggle");
 langBtn.addEventListener("click", changeLanguage);
 function changeLanguage() {
@@ -242,13 +241,135 @@ function changeLanguage() {
   document.title = isChinese ? it_Title : zh_CN_Title;
 }
 
+//
+
+/* ---------- 切换样式按钮 ---------- */
+const changeStylesBtn = document.getElementById("change-style-img");
+changeStylesBtn.addEventListener("click", changeStyle);
+
+function changeStyle() {
+  if (!currentStyle) {
+    currentStyle = localStorage.getItem("savedStyle") || "easyStyles";
+  }
+
+  const styles = ["easyStyles", "style1", "style2"];
+  const currentIndex = styles.indexOf(currentStyle);
+  const nextStyle = styles[(currentIndex + 1) % styles.length];
+
+  const styleLink = /** @type {HTMLLinkElement} */ (
+    document.getElementById("style")
+  );
+  styleLink.href = stylesPathsManager.getStylePath(nextStyle);
+  currentStyle = nextStyle;
+  localStorage.setItem("savedStyle", nextStyle);
+}
+
+/* ---------- 照片切换器 ---------- */
+/** @type {HTMLCollectionOf<HTMLDivElement>} */
+const imageSwitchers = document.getElementsByClassName("image-switcher");
+
+/** @type {{p:HTMLParagraphElement, zhcaptions:string[], itcaptions: string[], currentIndex: number}[]} */
+const all_pAndCaptions = [];
+
+for (let switcher of imageSwitchers) {
+  const paths = switcher.dataset.paths.split(" ");
+  const zh_captions = switcher.dataset.zhcaptions.split("<|");
+  const it_captions = switcher.dataset.itcaptions.split("<|");
+
+  /** @type {ImageSwitcherData} */
+  const switcherData = {
+    img_paths: paths,
+    zh_captions: zh_captions,
+    it_captions: it_captions,
+    img: undefined,
+    captionP: undefined,
+  };
+
+  if (switcherData.img_paths.length === 0) {
+    console.warn(switcher, "Image Paths is empty");
+    continue;
+  }
+
+  const imgEl = switcher.querySelector("img");
+
+  switcherData.img = imgEl;
+  switcherData.captionP = switcher.getElementsByClassName("caption")[0];
+
+  /** @type {{p:HTMLParagraphElement, zhcaptions:string[], itcaptions: string[], currentIndex: number}} */
+  const pAndCaptions = {
+    p: switcherData.captionP,
+    zhcaptions: zh_captions,
+    itcaptions: it_captions,
+    currentIndex: 0,
+  };
+  all_pAndCaptions.push(pAndCaptions);
+
+  switcher
+    .getElementsByClassName("prev-button")[0]
+    .addEventListener("click", () =>
+      SwitchIMG(switcherData, true, pAndCaptions)
+    );
+
+  switcher
+    .getElementsByClassName("next-button")[0]
+    .addEventListener("click", () =>
+      SwitchIMG(switcherData, false, pAndCaptions)
+    );
+
+  imgEl.src = switcherData.img_paths[0];
+  switcherData.captionP.textContent =
+    document.documentElement.lang === "zh-CN"
+      ? switcherData.zh_captions[0]
+      : switcherData.it_captions[0];
+}
+
+/**
+ * @param {ImageSwitcherData} switcherData
+ * @param {boolean} isPrev
+ * @param {{p:HTMLParagraphElement, zhcaptions:string[], itcaptions: string[], currentIndex: number}} pAndCaptions
+ */
+function SwitchIMG(switcherData, isPrev, pAndCaptions) {
+  const currentPath = new URL(switcherData.img.src).pathname;
+  const paths = switcherData.img_paths;
+  const oldIndex = paths.findIndex((path) => {
+    return currentPath.endsWith(path);
+  });
+
+  const newIndex = (oldIndex + (isPrev ? -1 : 1) + paths.length) % paths.length;
+  pAndCaptions.currentIndex = newIndex;
+  switcherData.img.src = paths[newIndex];
+  switcherData.captionP.textContent =
+    document.documentElement.lang === "zh-CN"
+      ? switcherData.zh_captions[newIndex]
+      : switcherData.it_captions[newIndex];
+}
+
+/** @type {string} */
+function changeCaptionsByLang(lang) {
+  all_pAndCaptions.forEach((e) => {
+    e.p.textContent =
+      lang == "zh-CN"
+        ? e.zhcaptions[e.currentIndex]
+        : e.itcaptions[e.currentIndex];
+  });
+}
+
+/* ---------- 禁止右键图片 ---------- */
+document.addEventListener("contextmenu", function (e) {
+  const target = /** @type {HTMLElement} */ (e.target);
+  if (target instanceof HTMLImageElement) {
+    e.preventDefault(); // 禁止图片元素的右键菜单
+  }
+});
+
 /* ---------- 监听语言变化 ---------- */
-const checkLang = () => {
+function checkLang() {
   const lang = document.documentElement.lang;
   if (lang !== "zh-CN" && lang !== "it") {
     document.documentElement.lang = localStorage.getItem("lang");
   }
-};
+  changeCaptionsByLang(lang);
+}
 
 const langObserver = new MutationObserver(checkLang);
 langObserver.observe(document.documentElement, {
@@ -280,33 +401,3 @@ function disconnectObserver() {
 }
 
 window.addEventListener("beforeunload", disconnectObserver);
-
-/* ---------- 切换样式按钮 ---------- */
-const changeStylesBtn = document.getElementById("change-style-img");
-changeStylesBtn.addEventListener("click", changeStyle);
-
-function changeStyle() {
-  if (!currentStyle) {
-    currentStyle = localStorage.getItem("savedStyle") || "easyStyles";
-  }
-  console.log(currentStyle);
-
-  const styles = ["easyStyles", "style1", "style2"];
-  const currentIndex = styles.indexOf(currentStyle);
-  const nextStyle = styles[(currentIndex + 1) % styles.length];
-
-  const styleLink = /** @type {HTMLLinkElement} */ (
-    document.getElementById("style")
-  );
-  styleLink.href = stylesPathsManager.getStylePath(nextStyle);
-  currentStyle = nextStyle;
-  localStorage.setItem("savedStyle", nextStyle);
-}
-
-/* ---------- 禁止右键图片 ---------- */
-document.addEventListener("contextmenu", function (e) {
-  const target = /** @type {HTMLElement} */ (e.target);
-  if (target instanceof HTMLImageElement) {
-    e.preventDefault(); // 禁止图片元素的右键菜单
-  }
-});

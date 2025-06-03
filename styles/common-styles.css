@@ -353,21 +353,6 @@ section ul {
   pointer-events: auto;
 }
 
-/* ---------- 通用：语言选择 ---------- */
-/* 隐藏所有语言内容 */
-.zh-CN,
-.it {
-  display: none;
-}
-
-/* 根据根 lang 显示 */
-html[lang="zh-CN"] .zh-CN {
-  display: block;
-}
-html[lang="it"] .it {
-  display: block;
-}
-
 /* ---------- 通用：突出显示文本的风格 ---------- */
 /* parent 不是 pre */
 :not(pre) > code {
@@ -455,4 +440,81 @@ footer.credits {
   margin-top: 10px;
   text-align: center;
   font-weight: bold;
+}
+
+/* ----------- 通用：图片切换器 -----------*/
+.image-switcher {
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  max-width: 600px;
+  min-width: 300px;
+  justify-items: center;
+}
+
+.image-switcher img {
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+  background-color: var(--base-bg-color1);
+}
+
+.image-switcher .switcher-controls {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  border-top: 1px solid var(--border-color);
+}
+
+.image-switcher .switcher-controls button {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--base-color);
+  cursor: pointer;
+  transition: transform 0.2s ease-out;
+}
+
+html[lang="it"] .image-switcher .switcher-controls button span.zh-CN,
+html[lang="zh-CN"] .image-switcher .switcher-controls button span.it {
+  display: none;
+}
+
+.image-switcher .switcher-controls button:hover {
+  transform: scale(1.2);
+}
+
+.image-switcher .switcher-controls button:active {
+  transform: scale(1);
+}
+
+.image-switcher .caption-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.image-switcher .caption-wrapper .caption {
+  border-radius: 8px 8px 0 0;
+}
+
+.image-switcher > p {
+  line-height: 1rem;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+/* ---------- 通用：语言选择 ---------- */
+/* 隐藏所有语言内容 */
+.zh-CN,
+.it {
+  display: none;
+}
+
+/* 根据根 lang 显示 */
+html[lang="zh-CN"] *.zh-CN {
+  display: block;
+}
+html[lang="it"] *.it {
+  display: block;
 }
