@@ -241,8 +241,6 @@ function changeLanguage() {
   document.title = isChinese ? it_Title : zh_CN_Title;
 }
 
-//
-
 /* ---------- 切换样式按钮 ---------- */
 const changeStylesBtn = document.getElementById("change-style-img");
 changeStylesBtn.addEventListener("click", changeStyle);
