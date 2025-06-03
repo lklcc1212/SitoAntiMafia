@@ -499,8 +499,8 @@ html[lang="zh-CN"] .image-switcher .switcher-controls button span.it {
 }
 
 .image-switcher > p {
-  line-height: 1rem;
-  font-size: 0.75rem;
+  line-height: 0.9rem;
+  font-size: 0.65rem;
   text-align: center;
 }
 

@@ -268,8 +268,8 @@ function changeStyle() {
 /** @type {HTMLCollectionOf<HTMLDivElement>} */
 const imageSwitchers = document.getElementsByClassName("image-switcher");
 
-/** @type {{p:HTMLParagraphElement, zhcaptions:string[], itcaptions: string[], currentIndex: number}[]} */
-const all_pAndCaptions = [];
+/** @type {CaptionBinding[]} */
+const captionBindings = [];
 
 for (let switcher of imageSwitchers) {
   const paths = switcher.dataset.paths.split(" ");
@@ -302,7 +302,7 @@ for (let switcher of imageSwitchers) {
     itcaptions: it_captions,
     currentIndex: 0,
   };
-  all_pAndCaptions.push(pAndCaptions);
+  captionBindings.push(pAndCaptions);
 
   switcher
     .getElementsByClassName("prev-button")[0]
@@ -329,11 +329,10 @@ for (let switcher of imageSwitchers) {
  * @param {{p:HTMLParagraphElement, zhcaptions:string[], itcaptions: string[], currentIndex: number}} pAndCaptions
  */
 function SwitchIMG(switcherData, isPrev, pAndCaptions) {
-  const currentPath = new URL(switcherData.img.src).pathname;
   const paths = switcherData.img_paths;
-  const oldIndex = paths.findIndex((path) => {
-    return currentPath.endsWith(path);
-  });
+  const fullPaths = paths.map((p) => new URL(p, location.href).pathname);
+  const currentPath = new URL(switcherData.img.src, location.href).pathname;
+  const oldIndex = fullPaths.findIndex((p) => p === currentPath);
 
   const newIndex = (oldIndex + (isPrev ? -1 : 1) + paths.length) % paths.length;
   pAndCaptions.currentIndex = newIndex;
@@ -346,7 +345,7 @@ function SwitchIMG(switcherData, isPrev, pAndCaptions) {
 
 /** @type {string} */
 function changeCaptionsByLang(lang) {
-  all_pAndCaptions.forEach((e) => {
+  captionBindings.forEach((e) => {
     e.p.textContent =
       lang == "zh-CN"
         ? e.zhcaptions[e.currentIndex]
