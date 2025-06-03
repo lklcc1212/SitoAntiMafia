@@ -1,10 +1,13 @@
 declare global {
   interface ImageSwitcherData {
     img_paths: string[];
-    zh_captions: string[];
-    it_captions: string[];
+    captions: {
+      zh: string[];
+      it: string[];
+    };
     img: HTMLImageElement;
     captionP: HTMLParagraphElement;
+    currentIndex: number;
   }
 
   interface CaptionBinding {

@@ -265,93 +265,88 @@ function changeStyle() {
 }
 
 /* ---------- 照片切换器 ---------- */
-/** @type {HTMLCollectionOf<HTMLDivElement>} */
-const imageSwitchers = document.getElementsByClassName("image-switcher");
+/** @type {ImageSwitcherData[]} */
+const SwitcherDatas = [];
 
-/** @type {CaptionBinding[]} */
-const captionBindings = [];
+function initializeImageSwitchers() {
+  /** @type {HTMLCollectionOf<HTMLDivElement>} */
+  const imageSwitchers = document.getElementsByClassName("image-switcher");
 
-for (let switcher of imageSwitchers) {
-  const paths = switcher.dataset.paths.split(" ");
-  const zh_captions = switcher.dataset.zhcaptions.split("<|");
-  const it_captions = switcher.dataset.itcaptions.split("<|");
+  for (let switcher of imageSwitchers) {
+    const paths = switcher.dataset.paths.split(" ");
+    const zh_captions = switcher.dataset.zhcaptions.split("<|");
+    const it_captions = switcher.dataset.itcaptions.split("<|");
 
-  /** @type {ImageSwitcherData} */
-  const switcherData = {
-    img_paths: paths,
-    zh_captions: zh_captions,
-    it_captions: it_captions,
-    img: undefined,
-    captionP: undefined,
-  };
+    /** @type {ImageSwitcherData} */
+    const switcherData = {
+      img_paths: paths,
+      captions: {
+        zh: zh_captions,
+        it: it_captions,
+      },
+      currentIndex: 0,
+      img: undefined,
+      captionP: undefined,
+    };
 
-  if (switcherData.img_paths.length === 0) {
-    console.warn(switcher, "Image Paths is empty");
-    continue;
+    if (switcherData.img_paths.length === 0) {
+      console.warn(switcher, "Image Paths is empty");
+      continue;
+    }
+
+    const imgEl = switcher.querySelector("img");
+
+    switcherData.img = imgEl;
+    switcherData.captionP = switcher.getElementsByClassName("caption")[0];
+
+    SwitcherDatas.push(switcherData);
+
+    switcher
+      .getElementsByClassName("prev-button")[0]
+      .addEventListener("click", () => SwitchIMG(switcherData, true));
+
+    switcher
+      .getElementsByClassName("next-button")[0]
+      .addEventListener("click", () => SwitchIMG(switcherData, false));
+
+    imgEl.src = switcherData.img_paths[0];
+    switcherData.captionP.textContent =
+      document.documentElement.lang === "zh-CN"
+        ? switcherData.captions.zh[0]
+        : switcherData.captions.it[0];
   }
-
-  const imgEl = switcher.querySelector("img");
-
-  switcherData.img = imgEl;
-  switcherData.captionP = switcher.getElementsByClassName("caption")[0];
-
-  /** @type {{p:HTMLParagraphElement, zhcaptions:string[], itcaptions: string[], currentIndex: number}} */
-  const pAndCaptions = {
-    p: switcherData.captionP,
-    zhcaptions: zh_captions,
-    itcaptions: it_captions,
-    currentIndex: 0,
-  };
-  captionBindings.push(pAndCaptions);
-
-  switcher
-    .getElementsByClassName("prev-button")[0]
-    .addEventListener("click", () =>
-      SwitchIMG(switcherData, true, pAndCaptions)
-    );
-
-  switcher
-    .getElementsByClassName("next-button")[0]
-    .addEventListener("click", () =>
-      SwitchIMG(switcherData, false, pAndCaptions)
-    );
-
-  imgEl.src = switcherData.img_paths[0];
-  switcherData.captionP.textContent =
-    document.documentElement.lang === "zh-CN"
-      ? switcherData.zh_captions[0]
-      : switcherData.it_captions[0];
 }
 
 /**
  * @param {ImageSwitcherData} switcherData
  * @param {boolean} isPrev
- * @param {{p:HTMLParagraphElement, zhcaptions:string[], itcaptions: string[], currentIndex: number}} pAndCaptions
  */
-function SwitchIMG(switcherData, isPrev, pAndCaptions) {
+function SwitchIMG(switcherData, isPrev) {
   const paths = switcherData.img_paths;
   const fullPaths = paths.map((p) => new URL(p, location.href).pathname);
   const currentPath = new URL(switcherData.img.src, location.href).pathname;
   const oldIndex = fullPaths.findIndex((p) => p === currentPath);
 
   const newIndex = (oldIndex + (isPrev ? -1 : 1) + paths.length) % paths.length;
-  pAndCaptions.currentIndex = newIndex;
+  switcherData.currentIndex = newIndex;
   switcherData.img.src = paths[newIndex];
   switcherData.captionP.textContent =
     document.documentElement.lang === "zh-CN"
-      ? switcherData.zh_captions[newIndex]
-      : switcherData.it_captions[newIndex];
+      ? switcherData.captions.zh[newIndex]
+      : switcherData.captions.it[newIndex];
 }
 
 /** @type {string} */
 function changeCaptionsByLang(lang) {
-  captionBindings.forEach((e) => {
-    e.p.textContent =
+  SwitcherDatas.forEach((e) => {
+    e.captionP.textContent =
       lang == "zh-CN"
-        ? e.zhcaptions[e.currentIndex]
-        : e.itcaptions[e.currentIndex];
+        ? e.captions.zh[e.currentIndex]
+        : e.captions.it[e.currentIndex];
   });
 }
+
+initializeImageSwitchers();
 
 /* ---------- 禁止右键图片 ---------- */
 document.addEventListener("contextmenu", function (e) {
